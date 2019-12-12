@@ -1,0 +1,42 @@
+Source: pylint-django
+Section: python
+Priority: optional
+Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Uploaders: Joseph Herlant <aerostitch@debian.org>
+Build-Depends: debhelper-compat (= 12),
+               dh-python,
+               pylint (>= 2.0),
+               python3-all,
+               python3-astroid,
+               python3-django,
+               python3-django-tables2,
+               python3-djangorestframework,
+               python3-factory-boy,
+               python3-psycopg2,
+               python3-pylint-plugin-utils (>= 0.4),
+               python3-pytest,
+               python3-setuptools
+Standards-Version: 4.4.1
+Rules-Requires-Root: no
+Homepage: https://github.com/PyCQA/pylint-django
+Vcs-Git: https://salsa.debian.org/python-team/modules/pylint-django.git
+Vcs-Browser: https://salsa.debian.org/python-team/modules/pylint-django
+
+Package: python3-pylint-django
+Architecture: all
+Depends: pylint (>= 2.0),
+         python3-pylint-plugin-utils (>= 0.4),
+         ${misc:Depends},
+         ${python3:Depends}
+Description: Pylint plugin for analysing code using Django (Python 3)
+ Features
+   * Prevents warnings about Django-generated attributes such as
+     Model.objects or Views.request.
+   * Prevents warnings when using ForeignKey attributes
+     ("Instance of ForeignKey has no member").
+   * Fixes pylint's knowledge of the types of Model and Form field attributes
+   * Validates Model.__unicode__ methods.
+   * Meta informational classes on forms and models do not generate errors.
+ It is also used by the Prospector tool.
+ .
+ This is the Python 3 version of the package

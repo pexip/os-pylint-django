@@ -1,0 +1,159 @@
+pylint-django (2.0.13-1) unstable; urgency=medium
+
+  * New upstream version 2.0.13
+  * Fix forgotten reference to pylint3 in the autopkgtests
+  * Refactor branches to match dep14
+  * d/rules and d/tests/control: disable run of unit tests until
+    pylint (2.5) is shipped with the needed classes again
+
+ -- Joseph Herlant <aerostitch@debian.org>  Wed, 11 Dec 2019 18:59:25 -0800
+
+pylint-django (2.0.11-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Bump Standards-Version to 4.4.1.
+
+  [ Joseph Herlant ]
+  * New upstream version 2.0.11
+  * pylint3 has been renamed to pylint. Updating dependencies
+  * d/control: bump debhelper-compat to 12
+  * d/rules: Remove deprecated --fail-missing from dh_install
+
+ -- Joseph Herlant <aerostitch@debian.org>  Sun, 20 Oct 2019 10:28:40 -0700
+
+pylint-django (2.0.5-1) unstable; urgency=medium
+
+  * New upstream version 2.0.5 (Closes: #917717).
+  * Add the new factory-boy dependency.
+  * d/control: bump standards to 4.3.0. No further change needed.
+  * Adding a d/upstream/metadata file to be DEP-12 compliant.
+  * Add -v to the test command as recommended by upstream.
+  * Update my email to my new debian one
+
+ -- Joseph Herlant <aerostitch@debian.org>  Wed, 02 Jan 2019 12:54:41 -0800
+
+pylint-django (2.0.1-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * Convert git repository from git-dpm to gbp layout.
+
+  [ Mattia Rizzolo ]
+  * New upstream version 2.0.1.
+    + Fix compatibility with new pylint/astroid.  Closes: #909664
+  * Bump Standards-Version to 4.2.1.
+    + Set Rules-Requires-Root:no.
+  * Use the new debhelper-compat(=11) notation and drop d/compat.
+  * Update versioned dependencies on pylint3 and python3-pylint-plugin-utils.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Wed, 26 Sep 2018 15:45:34 +0200
+
+pylint-django (0.11-1) unstable; urgency=low
+
+  [ Ondřej Nový ]
+  * d/tests: Use AUTOPKGTEST_TMP instead of ADTTMP
+
+  [ Joseph Herlant ]
+  * d/control: bump standards to 4.1.4
+  * d/control: remove unnecessary X-Python3-Version field
+  * Import pylint-django_0.11.orig.tar.gz
+
+ -- Joseph Herlant <herlantj@gmail.com>  Tue, 08 May 2018 22:56:03 -0700
+
+pylint-django (0.9.4-1) unstable; urgency=low
+
+  [ Joseph Herlant ]
+  * d/tests: add run of py3 unit tests with autopkgtest for now
+  * d/control: update the build-dep to pylint 1.8.2
+  * Dropping python2 package as not supported anymore by upstream
+  * d/copyright: update source link
+  * d/compat: bump compat to 11
+  * d/control: debhelper 11 to match compat
+  * Add autopkgtest of django sample project/app
+  * d/t/control: remove unnecessary build-needed restrictions
+  * Cleanup django-sample autopkgtest
+  * Import pylint-django_0.9.4.orig.tar.gz
+  * Re-enable unit tests and cleanup autopkgtests
+
+  [ Raphaël Hertzog ]
+  * Update autopkgtest to test installed module and not the one in the source
+    tree.
+
+ -- Joseph Herlant <herlantj@gmail.com>  Wed, 28 Mar 2018 11:48:03 -0700
+
+pylint-django (0.9.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Bump dependency on pylint and pylint3 to 1.8.2.
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Thu, 22 Feb 2018 21:47:52 +0100
+
+pylint-django (0.9.0-1) unstable; urgency=low
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Use https protocol in Format field
+
+  [ Joseph Herlant ]
+  * d/watch: Use pypi.debian.net
+  * d/control: bump standards to 4.1.3
+  * Import pylint-django_0.9.0.orig.tar.gz
+  * d/control: update homepage as upstream moved
+  * d/control: 0.9.0 requires pylint >= 1.8
+  * d/rules: disable the tests until #891146 is fixed
+
+ -- Joseph Herlant <herlantj@gmail.com>  Thu, 22 Feb 2018 11:05:59 -0800
+
+pylint-django (0.7.2-2) unstable; urgency=low
+
+  * incorrect dependencies fix.
+    Thanks to Adrian Bunk <bunk@debian.org> (Closes: #867413)
+  * Bump Standards-Version to 4.0.0
+  * Bump compat to 10
+
+ -- Joseph Herlant <herlantj@gmail.com>  Sat, 12 Aug 2017 16:53:29 -0700
+
+pylint-django (0.7.2-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * Fixed VCS URL (https).
+
+  [ Daniel Stender ]
+  * New upstream release.
+  * deb/control: bumped standards to 3.9.8 (no changes needed).
+  * deb/copyright: expanded copyright span, corrected.
+  * deb/rules: enabled tests, updated info.
+
+ -- Daniel Stender <stender@debian.org>  Fri, 24 Jun 2016 21:18:54 +0200
+
+pylint-django (0.7.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream tarball (Closes: #807306, #810329).
+  * deb/control:
+    + added Django to build deps (needed for tests).
+    + corrected Homepage (Closes: #795000).
+  * deb/rules:
+    + add dh_auto_test override with custom tests options.
+  * Added deb/source/options (extend-diff-ignore on egg-info).
+
+ -- Daniel Stender <debian@danielstender.com>  Fri, 29 Jan 2016 13:35:12 +0100
+
+pylint-django (0.6-2) unstable; urgency=medium
+
+  * Team upload.
+  * Add pylint, pylint3, python-pylint-plugin-utils,
+    python3-pylint-plugin-utils to Build-Depends for the test
+    suite that is now auto-executed with Python 3.5.
+    Closes: #800675
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Sat, 10 Oct 2015 23:18:34 +0200
+
+pylint-django (0.6-1) unstable; urgency=medium
+
+  * Initial release (Closes: #768567)
+
+ -- Joseph Herlant <herlantj@gmail.com>  Sat, 14 Mar 2015 21:47:00 -0700

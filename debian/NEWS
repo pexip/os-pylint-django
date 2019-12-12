@@ -1,0 +1,7 @@
+pylint-django (0.9.4-1) unstable; urgency=low
+
+  The support for python2 has been dropped after 0.8.0 by upstream, so the
+  python2 package has been dropped in Debian as the tests don't run properly
+  anymore with python2.
+
+ -- Joseph Herlant <herlantj@gmail.com>  Wed, 28 Mar 2018 11:48:03 -0700

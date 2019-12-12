@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=pylint-django
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_test:
+	echo "skipping tests until pylint 2.5 as the current version dropped the necessary classes. See #946619"
+#	PYBUILD_SYSTEM=custom PYBUILD_TEST_ARGS="PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=. {interpreter} pylint_django/tests/test_func.py -v" dh_auto_test

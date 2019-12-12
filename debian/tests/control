@@ -1,0 +1,3 @@
+Tests: django-sample
+Depends: @, python3-django
+Restrictions: allow-stderr

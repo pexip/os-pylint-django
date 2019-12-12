@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -e
+
+run() {
+  echo "Running “$@”"
+  $@
+}
+
+cd $AUTOPKGTEST_TMP
+run django-admin startproject testproject
+cd testproject
+run django-admin startapp testapp
+
+# Now test that pylint-django works on those
+run pylint --version
+run pylint -E --load-plugins=pylint_django testapp/

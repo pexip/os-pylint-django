@@ -1,0 +1,7 @@
+---
+Bug-Submit: https://github.com/PyCQA/pylint-django/issues
+Changelog: https://github.com/PyCQA/pylint-django/blob/master/CHANGELOG.rst
+Documentation: https://github.com/PyCQA/pylint-django/blob/master/README.rst
+Name: pylint-django
+Repository: git@github.com:PyCQA/pylint-django.git
+Repository-Browse: https://github.com/PyCQA/pylint-django
