@@ -1,12 +1,13 @@
 """
 Ensures that no '__unicode__ missing' warning is emitted if the
-Django python3/2 compatability dectorator is used
+Django python3/2 compatability decorator is used
 
 See https://github.com/PyCQA/pylint-django/issues/10
 """
-#  pylint: disable=missing-docstring
-from django.utils.encoding import python_2_unicode_compatible
 from django.db import models
+
+#  pylint: disable=missing-docstring
+from six import python_2_unicode_compatible
 
 
 @python_2_unicode_compatible

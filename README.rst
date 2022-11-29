@@ -1,14 +1,11 @@
 pylint-django
 =============
 
-.. image:: https://travis-ci.org/PyCQA/pylint-django.svg?branch=master
-    :target: https://travis-ci.org/PyCQA/pylint-django
+.. image:: https://github.com/PyCQA/pylint-django/actions/workflows/build.yml/badge.svg
+    :target: https://github.com/PyCQA/pylint-django/actions/workflows/build.yml
 
-.. image:: https://landscape.io/github/landscapeio/pylint-django/master/landscape.png
-    :target: https://landscape.io/github/landscapeio/pylint-django
-
-.. image:: https://coveralls.io/repos/PyCQA/pylint-django/badge.svg
-    :target: https://coveralls.io/r/PyCQA/pylint-django
+.. image:: https://coveralls.io/repos/github/PyCQA/pylint-django/badge.svg?branch=master
+     :target: https://coveralls.io/github/PyCQA/pylint-django?branch=master
 
 .. image:: https://img.shields.io/pypi/v/pylint-django.svg
     :target: https://pypi.python.org/pypi/pylint-django
@@ -44,10 +41,21 @@ about missing Django!
 Usage
 -----
 
-Ensure ``pylint-django`` is installed and on your path and then execute::
 
-    pylint --load-plugins pylint_django [..other options..] <path_to_your_sources>
+Ensure ``pylint-django`` is installed and on your path. In order to access some
+of the internal Django features to improve pylint inspections, you should also
+provide a Django settings module appropriate to your project. This can be done
+either with an environment variable::
 
+    DJANGO_SETTINGS_MODULE=your.app.settings pylint --load-plugins pylint_django [..other options..] <path_to_your_sources>
+
+Alternatively, this can be passed in as a commandline flag::
+
+    pylint --load-plugins pylint_django --django-settings-module=your.app.settings [..other options..] <path_to_your_sources>
+
+If you do not configure Django, default settings will be used but this will not include, for
+example, which applications to include in `INSTALLED_APPS` and so the linting and type inference
+will be less accurate. It is recommended to specify a settings module.
 
 Prospector
 ----------
@@ -70,40 +78,29 @@ Features
 * Validates ``Model.__unicode__`` methods.
 * ``Meta`` informational classes on forms and models do not generate errors.
 * Flags dangerous use of the exclude attribute in ModelForm.Meta.
+* Uses Django's internal machinery to try and resolve models referenced as
+  strings in ForeignKey fields. That relies on ``django.setup()`` which needs
+  the appropriate project settings defined!
 
 
 Additional plugins
 ------------------
 
-``pylint_django.checkers.db_performance`` looks for migrations which add new
-model fields and these fields have a default value. According to
-`Django docs <https://docs.djangoproject.com/en/2.0/topics/migrations/#postgresql>`__
-this may have performance penalties especially on large tables. The prefered way
-is to add a new DB column with ``null=True`` because it will be created instantly
-and then possibly populate the table with the desired default values.
+``pylint_django.checkers.migrations`` looks for migrations which:
 
-Only the last migration from a sub-directory will be examined!
+- add new model fields and these fields have a default value. According to
+  `Django docs <https://docs.djangoproject.com/en/2.0/topics/migrations/#postgresql>`_
+  this may have performance penalties especially on large tables. The preferred way
+  is to add a new DB column with ``null=True`` because it will be created instantly
+  and then possibly populate the table with the desired default values.
+  Only the last migration from a sub-directory will be examined;
+- are ``migrations.RunPython()`` without a reverse callable - these will result in
+  non reversible data migrations;
+
 
 This plugin is disabled by default! To enable it::
 
-    pylint --load-plugins pylint_django --load-plugins pylint_django.checkers.db_performance
-
-
-Known issues
-------------
-
-If you reference foreign-key models by their name (as string) ``pylint-django`` may not be
-able to find the model and will report issues because it has no idea what the underlying
-type of this field is. Supported options are::
-
-- ``self`` and ``Model`` - look for this class in the current module which is being examined
-- ``app.Model`` - try loading ``app.models`` into the AST parser and look for ``Model`` there
-
-
-If your ``models.py`` itself is not importing the foreign-key class
-there's probably some import problem (likely circular dependencies) preventing referencing
-the foreign-key class directly. In this case ``pylint-django`` can't do much about it.
-We always recommend referencing foreign-key models by their classes.
+    pylint --load-plugins pylint_django --load-plugins pylint_django.checkers.migrations
 
 
 Contributing

@@ -1,0 +1,8 @@
+uses:
+  - django
+strictness: high
+doc-warnings: no
+max-line-length: 120
+ignore-paths:
+  - scripts/
+  - pylint_django/compat.py
