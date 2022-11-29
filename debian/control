@@ -1,8 +1,9 @@
 Source: pylint-django
 Section: python
 Priority: optional
-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
-Uploaders: Joseph Herlant <aerostitch@debian.org>
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+XSBC-Pexip-Original-Uploaders: Joseph Herlant <aerostitch@debian.org>
 Build-Depends: debhelper-compat (= 12),
                dh-python,
                pylint (>= 2.0),
@@ -21,6 +22,7 @@ Rules-Requires-Root: no
 Homepage: https://github.com/PyCQA/pylint-django
 Vcs-Git: https://salsa.debian.org/python-team/modules/pylint-django.git
 Vcs-Browser: https://salsa.debian.org/python-team/modules/pylint-django
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ bullseye
 
 Package: python3-pylint-django
 Architecture: all
