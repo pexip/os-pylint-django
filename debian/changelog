@@ -1,3 +1,9 @@
+pylint-django (2.5.3-1pexip1) pexip; urgency=medium
+
+  * New upstream version
+
+ -- Vincent Sanders <vince@pexip.com>  Tue, 29 Nov 2022 16:33:10 +0000
+
 pylint-django (2.0.13-1pexip1) pexip; urgency=medium
 
   * Prepare Pexip packaging
