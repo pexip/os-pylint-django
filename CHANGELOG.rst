@@ -1,6 +1,154 @@
 Changelog
 =========
 
+Version 2.5.3 (25 Mär 2022)
+---------------------------
+
+Bugfixes
+~~~~~~~~
+
+- Fixed compatibility issue between pylint `2.12` and `2.13` to construct `ScopeConsumer` tuples correctly depending on version (`#358 <https://github.com/PyCQA/pylint-django/issues/358>`_)
+
+Other
+~~~~~
+
+- pylint version is now pinned to `<3` to give breathing space to update pylint-django before the major update lands
+
+Version 2.5.2 (18 Feb 2022)
+---------------------------
+
+Bugfixes
+~~~~~~~~
+
+- Fixed crash with assigning a class to a variable, and referencing the variable when subclassing (`#349 <https://github.com/PyCQA/pylint-django/issues/349>`_)
+
+Other
+~~~~~
+
+- CI now tests against Django 4.0
+
+
+Version 2.5.1 (16 Feb 2022)
+---------------------------
+
+Bugfixes
+~~~~~~~~
+
+- Fixed pickling for `augment_visit` (`#276 <https://github.com/PyCQA/pylint-django/issues/276>`_)
+
+Version 2.5.0 (02 Jan 2022)
+---------------------------
+
+Bugfixes
+~~~~~~~~
+
+- Fixed compatibility with astroid 2.9.1 (`#343 <https://github.com/PyCQA/pylint-django/issues/343>`_)
+
+New
+~~~
+
+- Removed false positive error of missing member in TextChoices tuples `#298 <https://github.com/PyCQA/pylint-django/issues/298>`_ (see pulls `#330 <https://github.com/PyCQA/pylint-django/pull/330>`_ and `#345 <https://github.com/PyCQA/pylint-django/pull/345>`_)
+- Moved from Travis CI to GitHub Actions (`#366 <https://github.com/PyCQA/pylint-django/pull/366>`_ and `#340 <https://github.com/PyCQA/pylint-django/pull/340>`_)
+- Added pre-commit configuration and began enforcing black/isort code formatting
+- Multiple test fixes (including `#338 <https://github.com/PyCQA/pylint-django/issues/338>`_) - newer versions of pylint expect a different format for the expected messages txt files.
+- Bumped dependency for pylint-django-utils to get `multi-threaded pylint support <https://github.com/PyCQA/pylint-plugin-utils/pull/21>`_
+
+Version 2.4.4 (26 Apr 2021)
+---------------------------
+
+- Fix compatibility issues with pylint >= 2.8. Fixes
+  `#322 <https://github.com/PyCQA/pylint-django/issues/322>`_ and
+  `#323 <https://github.com/PyCQA/pylint-django/issues/323>`_
+
+
+Version 2.4.3 (09 Apr 2021)
+---------------------------
+
+- Start testing with Django 3.2 on Python 3.9 (Michael K.)
+- Teach pylint-django about all HTTP methods from the View class, not only
+  ``get`` and ``post`` (Nicolás Quiroz)
+- Typo fixes for
+  `#314 <https://github.com/PyCQA/pylint-django/issues/314>`_ (John Sandall)
+- Ignore ``unused-argument`` for ``*args``, ``**kwards`` in view method signatures
+
+
+Version 2.4.2 (08 Jan 2021)
+---------------------------
+
+- Moved `Faker` dependencies to test-only `#304 <https://github.com/PyCQA/pylint-django/issues/304>`_
+
+
+Version 2.4.1 (07 Jan 2021)
+---------------------------
+
+- Relaxed Faker package versioning requirement for ``Faker`` (Robin Chow)
+
+
+Version 2.4.0 (06 Jan 2021)
+---------------------------
+
+- Allowed configuration of the Django settings module to be used via a
+  commandline argument `#286 <https://github.com/PyCQA/pylint-django/issues/286>`_
+- If Django settings are not specified via a commandline argument or environment
+  variable, an error is issued but defaults are loaded from Django, removing the
+  fatal error behaviour. `#277 <https://github.com/PyCQA/pylint-django/issues/277>`_
+  and `#243 <https://github.com/PyCQA/pylint-django/issues/243>`_
+- Fixed tests to work with pylint>2.6
+- Fixed ``AttributeError: 'Subscript' object has no attribute 'name'`` error.
+  Closes `#284 <https://github.com/PyCQA/pylint-django/issues/284>`_ (@uy-rrodriguez)
+- Pin Faker version to Prevent Asteroid Crash (James Pulec)
+- Remove Python 3.5 Support (EOL since Sept 2020 and Faker requires 3.6 anyway)
+  (James Pulec)
+- Fixed reverse manager ``update_or_create`` calls (James Pulec)
+
+
+Version 2.3.0 (05 Aug 2020)
+---------------------------
+
+- Improvement in error message for ``missing-backwards-migration-callable``
+  (Bryan Mutai)
+- Start testing with Django 3.1 on Python 3.8
+- Better error message when Django is not configured. Closes
+  `#277 <https://github.com/PyCQA/pylint-django/issues/277>`_
+
+
+Version 2.2.0 (22 Jul 2020)
+---------------------------
+
+- Rely on Django to resolve string references in ForeignKey fields. Refs
+  `#243 <https://github.com/PyCQA/pylint-django/issues/243>`_ (Alejandro Angulo)
+- Suppress ``unused-argument`` for functions in migration modules. Fix
+  `#267 <https://github.com/PyCQA/pylint-django/issues/267>`_
+- New checker for hard-coded ``auth.User``. Fix
+  `#244 <https://github.com/PyCQA/pylint-django/issues/244>`_
+
+
+Version 2.1.0 (12 Jul 2020)
+---------------------------
+
+- New checker to warn about missing backwards data migrations (Bryan Mutai)
+- Rename ``pylint_django.checkers.db_performance`` to
+  ``pylint_django.checkers.migrations``
+- Add URL to project Changelog for PyPI (Ville Skyttä)
+- Fix failing test suite b/c of missing CSV dialect. Fix
+  `#268 <https://github.com/PyCQA/pylint-django/issues/268>`_
+  (Alejandro Angulo)
+
+
+Version 2.0.15 (14 Apr 2020)
+----------------------------
+
+- Do not report error for ``gettext_lazy`` (Antonin MOREL)
+
+
+Version 2.0.14 (25 Feb 2020)
+----------------------------
+
+- Add support for Django 3.0 and Python 3.8 (Wayne Lambert)
+- Support ASGI. Fix
+  `#258 <https://github.com/PyCQA/pylint-django/issues/258>`_ (Sander Maijers)
+
+
 Version 2.0.13 (23 Nov 2019), HackBulgaria edition
 --------------------------------------------------
 
