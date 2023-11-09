@@ -22,7 +22,7 @@ Rules-Requires-Root: no
 Homepage: https://github.com/PyCQA/pylint-django
 Vcs-Git: https://salsa.debian.org/python-team/modules/pylint-django.git
 Vcs-Browser: https://salsa.debian.org/python-team/modules/pylint-django
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ bullseye
+XS-Pexip-Upstream: http://deb.debian.org/debian/ bookworm
 
 Package: python3-pylint-django
 Architecture: all
