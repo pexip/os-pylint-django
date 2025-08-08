@@ -1,5 +1,0 @@
-include *.md
-include *.rst
-include LICENSE
-include pylint_django/transforms/transforms/*.py
-recursive-include pylint_django/tests/ *.py *.rc *.txt

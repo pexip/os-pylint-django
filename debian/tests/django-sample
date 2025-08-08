@@ -12,6 +12,7 @@ run django-admin startproject testproject
 cd testproject
 run django-admin startapp testapp
 
+export DJANGO_SETTINGS_MODULE=testproject.settings
 # Now test that pylint-django works on those
 run pylint --version
 run pylint -E --load-plugins=pylint_django testapp/

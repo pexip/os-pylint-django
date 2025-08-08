@@ -1,3 +1,68 @@
+pylint-django (2.6.1-1) unstable; urgency=medium
+
+  [ Pablo Lucas ]
+  * QA upload.
+  * New upstream version 2.6.1.
+  * Bump Standards-Version to 4.7.2.
+  * Run wrap-and-sort.
+  * d/t/django-sample: Export DJANGO_SETTINGS_MODULE, needed on new versions
+    of django.
+  * d/{control,copyright,upstream/metadata}: Update repository owner from
+    PyCQA to pylint-dev.
+  * d/copyright:
+    - FSF physical address removed.
+    - Add myself as a copyright holder for debian/*.
+  * d/rules:
+    - Tests permanently removed cause upstream removed them (closes: #946619).
+    - Add execute_after_dh_auto_install to exclude installation of "LICENSE"
+    file.
+  * d/control:
+    - Update dependencies versions.
+    - Add <nocheck> on B-D just used on tests.
+  * d/patches
+    - fix-pylint.patch: Drop patch, it's in the current upstream release.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Security-Contact.
+  * Update standards version to 4.6.2, no changes needed.
+
+ -- Pablo <pablolucas890@gmail.com>  Fri, 08 Aug 2025 12:53:16 -0300
+
+pylint-django (2.0.13-4) unstable; urgency=medium
+
+  * QA upload.
+  * Set maintainer to Debian QA Group <packages@qa.debian.org>. (see #978593)
+
+ -- Evandro Popadiuk Royka <evandroroyka@gmail.com>  Thu, 14 Dec 2023 17:29:15 -0300
+
+pylint-django (2.0.13-3) unstable; urgency=medium
+
+  * Team Upload.
+  * Add patch to fix FTBFS with new pylint (Closes: #1021889)
+  * Bump Standards-Version to 4.6.1 (no changes needed)
+  * Bump debhelper compatibility level to 13
+  * Drop d/NEWS: that entry is from 4 years ago, we have had 2 releases since
+  * d/watch: Bump version to 4
+
+ -- Nilesh Patra <nilesh@debian.org>  Mon, 17 Oct 2022 00:03:48 +0530
+
+pylint-django (2.0.13-2) unstable; urgency=low
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Repository.
+  * Remove obsolete field Name from debian/upstream/metadata (already present in
+    machine-readable debian/copyright).
+  * Update standards version to 4.5.0, no changes needed.
+  * Replace use of deprecated $ADTTMP with $AUTOPKGTEST_TMP.
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+ -- Sandro Tosi <morph@debian.org>  Thu, 02 Jun 2022 21:27:57 -0400
+
 pylint-django (2.0.13-1) unstable; urgency=medium
 
   * New upstream version 2.0.13

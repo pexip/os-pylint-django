@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd ${ADTTMP:-/tmp}
+cd ${AUTOPKGTEST_TMP:-/tmp}
 python3 /usr/lib/python3/dist-packages/pylint_django/tests/test_func.py -v
