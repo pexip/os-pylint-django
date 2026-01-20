@@ -1,3 +1,44 @@
+Metadata-Version: 2.1
+Name: pylint-django
+Version: 2.6.1
+Summary: A Pylint plugin to help Pylint understand the Django web framework
+Home-page: https://github.com/pylint-dev/pylint-django
+Keywords: pylint,django,plugin
+Author: Carl Crowder
+Author-email: git@carlcrowder.com
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Framework :: Django :: 2.2
+Classifier: Framework :: Django :: 3
+Classifier: Framework :: Django :: 3.0
+Classifier: Framework :: Django :: 3.1
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django :: 4
+Classifier: Framework :: Django :: 4.0
+Classifier: Framework :: Django :: 4.1
+Classifier: Framework :: Django :: 4.2
+Classifier: Framework :: Django :: 5.0
+Classifier: Framework :: Django :: 5.1
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Quality Assurance
+Provides-Extra: with_django
+Requires-Dist: Django (>=2.2); extra == "with_django"
+Requires-Dist: pylint (>=3.0,<4)
+Requires-Dist: pylint-plugin-utils (>=0.8)
+Project-URL: Repository, https://github.com/pylint-dev/pylint-django
+Description-Content-Type: text/x-rst
+
 pylint-django
 =============
 
@@ -140,3 +181,4 @@ License
 -------
 
 ``pylint-django`` is available under the GPLv2 license.
+
