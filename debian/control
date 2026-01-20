@@ -2,34 +2,36 @@ Source: pylint-django
 Section: python
 Priority: optional
 Maintainer: Pexip AS <packaging@pexip.com>
-XSBC-Pexip-Original-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
-XSBC-Pexip-Original-Uploaders: Joseph Herlant <aerostitch@debian.org>
-Build-Depends: debhelper-compat (= 12),
+XSBC-Pexip-Original-Maintainer: Debian QA Group <packages@qa.debian.org>
+Build-Depends: debhelper-compat (= 13),
                dh-python,
-               pylint (>= 2.0),
+               pybuild-plugin-pyproject,
+               pylint (>= 3.0),
                python3-all,
                python3-astroid,
                python3-django,
-               python3-django-tables2,
-               python3-djangorestframework,
-               python3-factory-boy,
-               python3-psycopg2,
-               python3-pylint-plugin-utils (>= 0.4),
-               python3-pytest,
-               python3-setuptools
-Standards-Version: 4.4.1
+               python3-django-tables2 <!nocheck>,
+               python3-django-tastypie <!nocheck>,
+               python3-djangorestframework <!nocheck>,
+               python3-factory-boy <!nocheck>,
+               python3-poetry,
+               python3-poetry-core,
+               python3-psycopg2 <!nocheck>,
+               python3-pylint-plugin-utils (>= 0.8),
+               python3-pytest <!nocheck>,
+               python3-setuptools,
+               python3-six <!nocheck>,
+               python3-wheel
+Standards-Version: 4.7.2
 Rules-Requires-Root: no
-Homepage: https://github.com/PyCQA/pylint-django
-Vcs-Git: https://salsa.debian.org/python-team/modules/pylint-django.git
-Vcs-Browser: https://salsa.debian.org/python-team/modules/pylint-django
+Homepage: https://github.com/pylint-dev/pylint-django
+Vcs-Git: https://salsa.debian.org/python-team/packages/pylint-django.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/pylint-django
 XS-Pexip-Upstream: http://deb.debian.org/debian/ forky
 
 Package: python3-pylint-django
 Architecture: all
-Depends: pylint (>= 2.0),
-         python3-pylint-plugin-utils (>= 0.4),
-         ${misc:Depends},
-         ${python3:Depends}
+Depends: ${misc:Depends}, ${python3:Depends}
 Description: Pylint plugin for analysing code using Django (Python 3)
  Features
    * Prevents warnings about Django-generated attributes such as
