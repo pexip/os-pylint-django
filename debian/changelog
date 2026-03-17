@@ -1,3 +1,21 @@
+pylint-django (2.6.1-2+pexip25u1) pexip-trixie; urgency=medium
+
+  * New upstream release
+
+ -- Steve McIntyre <steve.mcintyre@pexip.com>  Tue, 17 Mar 2026 10:59:01 +0000
+
+pylint-django (2.6.1-2) unstable; urgency=medium
+
+  * QA upload.
+  * Drop build-dep on python3-six
+  * Drop build-dep on python3-setuptools, this uses poetry
+  * Add debian/salsa-ci.yml
+  * Drop "Rules-Requires-Root: no": it is the default now
+  * Dump Standards-Version to 4.7.3, drop Priority: tag
+  * Use dh-sequence-python3
+
+ -- Alexandre Detiste <tchet@debian.org>  Sun, 08 Mar 2026 22:59:51 +0100
+
 pylint-django (2.6.1-1+pexip25u1) pexip-trixie; urgency=medium
 
   * New upstream release
@@ -58,11 +76,19 @@ pylint-django (2.5.3-1pexip1) pexip; urgency=medium
 
  -- Vincent Sanders <vince@pexip.com>  Tue, 29 Nov 2022 16:33:10 +0000
 
-pylint-django (2.0.13-1pexip1) pexip; urgency=medium
+pylint-django (2.0.13-5) unstable; urgency=medium
 
-  * Prepare Pexip packaging
+  * QA upload.
 
- -- Vincent Sanders <vince@pexip.com>  Tue, 29 Nov 2022 14:57:10 +0000
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Security-Contact.
+  * Update standards version to 4.6.2, no changes needed.
+
+  [ Mathias Gibbens ]
+  * Add patch backporting changes for pylint 3.x (Closes: #1108779)
+
+ -- Mathias Gibbens <gibmat@debian.org>  Wed, 09 Jul 2025 08:39:59 +0000
+
 
 pylint-django (2.0.13-4) unstable; urgency=medium
 
@@ -98,6 +124,12 @@ pylint-django (2.0.13-2) unstable; urgency=low
     layout.
 
  -- Sandro Tosi <morph@debian.org>  Thu, 02 Jun 2022 21:27:57 -0400
+
+pylint-django (2.0.13-1pexip1) pexip; urgency=medium
+
+  * Prepare Pexip packaging
+
+ -- Vincent Sanders <vince@pexip.com>  Tue, 29 Nov 2022 14:57:10 +0000
 
 pylint-django (2.0.13-1) unstable; urgency=medium
 
